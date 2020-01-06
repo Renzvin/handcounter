@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getData();
                 mCount++;
                 databaseClass();
             }
@@ -82,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 tvCounter.setText(dataSnapshot.getValue(String.class));
+                mCount = Integer.parseInt(dataSnapshot.getValue(String.class));
             }
 
             @Override
