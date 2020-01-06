@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "273693105121",
+    "firebase_url": "https://hand-counter.firebaseio.com",
+    "project_id": "hand-counter",
+    "storage_bucket": "hand-counter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273693105121:android:4d3a92576562cb00b3d0a0",
+        "android_client_info": {
+          "package_name": "com.banana.handcounter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273693105121-bn7p11ord4qtmcbv5t1f59j85t6pbjln.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.banana.handcounter",
+            "certificate_hash": "4df7ab3bf0165b6145a4c4b6a403448a851a1eef"
+          }
+        },
+        {
+          "client_id": "273693105121-a4oi378h212eol5j3vneucpc3s6p17jo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnHy9wajf9Ox_r74AIiJD6ETNPIi4-_do"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273693105121-a4oi378h212eol5j3vneucpc3s6p17jo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
