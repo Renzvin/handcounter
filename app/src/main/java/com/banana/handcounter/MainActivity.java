@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.service.autofill.UserData;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -34,15 +35,17 @@ public class MainActivity extends AppCompatActivity {
 
         databaseReference  = FirebaseDatabase.getInstance().getReference("ALL_USER_COUNTER_DATA");
 
+
         mAuth = FirebaseAuth.getInstance();
         plus = findViewById(R.id.buttonplus);
         min = findViewById(R.id.buttonminus);
         logout = findViewById(R.id.logout);
         tvCounter = findViewById(R.id.number);
-
+        getData();
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                getData();
                 mCount++;
                 databaseClass();
             }
@@ -71,6 +74,24 @@ public class MainActivity extends AppCompatActivity {
         databaseReference.child(id).setValue(counterClass);
         tvCounter.setText(Integer.toString(mCount));
     }
+
+    public void getData(){
+        DatabaseReference child = databaseReference.child("NANTI_DI_GANTI_LIST_USER");
+        final DatabaseReference datacount = child.child("counter");
+        datacount.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                tvCounter.setText(dataSnapshot.getValue(String.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+
 
     public void gotoLogin(){
         Intent intent = new Intent(this, Login.class);
